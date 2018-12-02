@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <title>Latitude vs. Temperature</title>
+
+      <!-- Bootstrap -->
+      <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/united/bootstrap.min.css"
+            rel="stylesheet">
+
+      <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="web2.html">Latitude</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Plots
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="vis1.html">Max Temperature</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="vis2.html">Humidity</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="vis3.html">Cloudiness</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="vis4.html">Wind Speed</a>
+                </div>
+            </li>
+            <li><a href="comparisons.html">Comparison</a></li>
+            <li><a href="table.html">Data</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  <div class="container">
+    <div class="summary">
+      <h1>Latitude vs. Max Temperature</h1>
+    </div> 
+     <div class="summary-text">
+    </div>
+  </div>
+  <div class="container">
+      <div class="visualizations">
+        <img src="pic1.png" alt="Map graph" width="300" height="200">
+        <p>This graph is a scatterplot that depicts a city's latitude on the x-axis compared to its' maximum 
+            temperature recorded on the y-axis. This graph shows that cities with latitudes that are closer to 0 
+            or closer to the equator are more likely to report higher max temperatures than those with latitudes further from 0. 
+      </p>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+
+</html>
