@@ -34,11 +34,11 @@ submit.on("click", function() {
   // Get the value property of the input element
   var inputValue = inputElement.property("value");
 
-  console.log(inputValue);
-
+  // Filter the data.js information for the date provided by the user
   var rightData = tableData.filter(ufoData => ufoData.datetime === inputValue);
-  console.log(rightData);
 
+  // If the array is empty then tell the user there are no sightings on this date
+  // Else then update the table with the information returned
   if (rightData.length == 0) {
       tbody.html("There aren't any sightings reported on this date!");
   }
@@ -53,9 +53,8 @@ submit.on("click", function() {
             });
         });
   };
-
-  
-
 });
+
+// Run the initial table upon opening the page
 init();
   
