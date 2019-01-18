@@ -1,90 +1,69 @@
-# Belly Button Biodiversity
+# Unit 16 | Assignment - Data Journalism and D3
 
-![Bacteria by filterforge.com](Images/bacteria_by_filterforgedotcom.jpg)
+![Newsroom](https://media.giphy.com/media/v2xIous7mnEYg/giphy.gif)
 
-In this assignment, you will build an interactive dashboard to explore the [Belly Button Biodiversity DataSet](http://robdunnlab.com/projects/belly-button-biodiversity/).
+## Background
 
-## Step 1 - Plotly.js
+Welcome to the newsroom! You've just accepted a data visualization position for a major metro paper. You're tasked with analyzing the current trends shaping people's lives, as well as creating charts, graphs, and interactive elements to help readers understand your findings.
 
-Use Plotly.js to build interactive charts for your dashboard.
+The editor wants to run a series of feature stories about the health risks facing particular demographics. She's counting on you to sniff out the first story idea by sifting through information from the U.S. Census Bureau and the Behavioral Risk Factor Surveillance System.
 
-* Create a PIE chart that uses data from your samples route (`/samples/<sample>`) to display the top 10 samples.
+The data set included with the assignment is based on 2014 ACS 1-year estimates: [https://factfinder.census.gov/faces/nav/jsf/pages/searchresults.xhtml](https://factfinder.census.gov/faces/nav/jsf/pages/searchresults.xhtml), but you are free to investigate a different data set. The current data set incldes data on rates of income, obesity, poverty, etc. by state. MOE stands for "margin of error."
 
-  * Use `sample_values` as the values for the PIE chart
+## Your Task
 
-  * Use `otu_ids` as the labels for the pie chart
+### Level 1: D3 Dabbler
 
-  * Use `otu_labels` as the hovertext for the chart
+![4-scatter](Images/4-scatter.jpg)
 
-  ![PIE Chart](Images/pie_chart.png)
+You need to create a scatter plot between two of the data variables such as `Healthcare vs. Poverty` or `Smokers vs. Age`.
 
-* Create a Bubble Chart that uses data from your samples route (`/samples/<sample>`) to display each sample.
+Using the D3 techniques we taught you in class, create a scatter plot that represents each state with circle elements. You'll code this graphic in the `app.js` file of your homework directory—make sure you pull in the data from `data.csv` by using the `d3.csv` function. Your scatter plot should ultimately appear like the image at the top of this section.
 
-  * Use `otu_ids` for the x values
+* Include state abbreviations in the circles.
 
-  * Use `sample_values` for the y values
+* Create and situate your axes and labels to the left and bottom of the chart.
 
-  * Use `sample_values` for the marker size
-
-  * Use `otu_ids` for the marker colors
-
-  * Use `otu_labels` for the text values
-
-  ![Bubble Chart](Images/bubble_chart.png)
-
-* Display the sample metadata from the route `/metadata/<sample>`
-
-  * Display each key/value pair from the metadata JSON object somewhere on the page
-
-* Update all of the plots any time that a new sample is selected.
-
-* You are welcome to create any layout that you would like for your dashboard. An example dashboard page might look something like the following.
-
-![Example Dashboard Page](Images/dashboard_part1.png)
-![Example Dashboard Page](Images/dashboard_part2.png)
-
-## Step 2 - Heroku
-
-Deploy your Flask app to Heroku.
-
-* You can use the provided sqlite file for the database.
-
-* Ask your Instructor and TAs for help!
+* Note: You'll need to use `python -m http-server` to run the visualization. This will host the page at `localhost:8000` in your web browser.
 
 - - -
 
-## Advanced Challenge Assignment (Optional)
+### Level 2: Impress the Boss (Optional Challenge Assignment)
 
-The following task is completely optional and is very advanced.
+Why make a static graphic when D3 lets you interact with your data?
 
-* Adapt the Gauge Chart from <https://plot.ly/javascript/gauge-charts/> to plot the Weekly Washing Frequency obtained from the route `/wfreq/<sample>`
+![7-animated-scatter](Images/7-animated-scatter.gif)
 
-* You will need to modify the example gauge code to account for values ranging from 0 - 9.
+#### 1. More Data, More Dynamics
 
-* Update the chart whenever a new sample is selected
+You're going to include more demographics and more risk factors. Place additional labels in your scatter plot and give them click events so that your users can decide which data to display. Animate the transitions for your circles' locations as well as the range of your axes. Do this for two risk factors for each axis. Or, for an extreme challenge, create three for each axis.
 
-![Weekly Washing Frequency Gauge](Images/gauge.png)
+* Hint: Try binding all of the CSV data to your circles. This will let you easily determine their x or y values when you click the labels.
 
-- - -
+#### 2. Incorporate d3-tip
 
-## Flask API
+While the ticks on the axes allow us to infer approximate values for each circle, it's impossible to determine the true value without adding another layer of data. Enter tooltips: developers can implement these in their D3 graphics to reveal a specific element's data when the user hovers their cursor over the element. Add tooltips to your circles and display each tooltip with the data that the user has selected. Use the `d3-tip.js` plugin developed by [Justin Palmer](https://github.com/Caged)—we've already included this plugin in your assignment directory.
 
-Use Flask API starter code to serve the data needed for your plots.
+![8-tooltip](Images/8-tooltip.gif)
 
-* Test your routes by visiting each one in the browser.
-
-- - -
-
-## Hints
-
-* Don't forget to `pip install -r requirements.txt` before you start your server.
-
-* Use `console.log` inside of your JavaScript code to see what your data looks like at each step.
-
-* Refer to the [Plotly.js Documentation](https://plot.ly/javascript/) when building the plots.
+* Check out [David Gotz's example](https://bl.ocks.org/davegotz/bd54b56723c154d25eedde6504d30ad7) to see how you should implement tooltips with d3-tip.
 
 - - -
 
-### Copyright
+### Assessment
+
+Your final product will be assessed on the following metrics:
+
+* Completion of all steps in chosen level
+
+* Coherency of scatter plot (labels, ticks)
+
+* Visual attraction
+
+* Professionalism
+
+**Good luck!**
+
+## Copyright
 
 Data Boot Camp © 2018. All Rights Reserved.
